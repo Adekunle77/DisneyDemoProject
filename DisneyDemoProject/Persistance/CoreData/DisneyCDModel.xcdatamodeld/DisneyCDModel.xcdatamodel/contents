@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21G920" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DisneyCharacterEntity" representedClassName="DisneyCharacterEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="String"/>
+        <attribute name="downloadedImageData" optional="YES" attributeType="Binary"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String"/>
+        <attribute name="isFavourite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="sourceURL" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="films" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FilmEntity" inverseName="disneyCharacter" inverseEntity="FilmEntity"/>
+        <relationship name="shortFilms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ShortFilmEntity" inverseName="disneyCharacter" inverseEntity="ShortFilmEntity"/>
+    </entity>
+    <entity name="FilmEntity" representedClassName="FilmEntity" syncable="YES">
+        <attribute name="films" optional="YES" attributeType="String"/>
+        <relationship name="disneyCharacter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DisneyCharacterEntity" inverseName="films" inverseEntity="DisneyCharacterEntity"/>
+    </entity>
+    <entity name="ShortFilmEntity" representedClassName="ShortFilmEntity" syncable="YES">
+        <attribute name="shortFilms" optional="YES" attributeType="String"/>
+        <relationship name="disneyCharacter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DisneyCharacterEntity" inverseName="shortFilms" inverseEntity="DisneyCharacterEntity"/>
+    </entity>
+    <elements>
+        <element name="DisneyCharacterEntity" positionX="-63" positionY="-18" width="128" height="194"/>
+        <element name="FilmEntity" positionX="-54" positionY="45" width="128" height="59"/>
+        <element name="ShortFilmEntity" positionX="18" positionY="81" width="128" height="59"/>
+    </elements>
+</model>
